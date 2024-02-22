@@ -1,0 +1,70 @@
+/* this for background image */
+body {
+    background-image: url('../../home/images/bg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+/* this for navbar */
+nav {
+    background-color: #4C42BD;
+}
+
+.btn {
+    border-radius: 50px;
+    color: white;
+}
+
+.login {
+    border-color: #9F9BDC;
+}
+
+.login:hover {
+    background-color: #9F9BDC;
+    color: white;
+}
+
+/* this for navbar END*/
+
+/* footer stuff */
+#socialMediaSection {
+    background-color: #9F9BDC;
+    color: white;
+}
+
+#linksSection {
+    background-color: #9F9BDC;
+    color: white;
+}
+
+#copyrightDiv {
+    background-color: #8f8cc6;
+    color: white;
+}
+/* footer stuff END*/
+
+#searchButton {
+    background-color: transparent;
+    border-color: #9F9BDC;
+}
+
+#searchButton:hover {
+    background-color: #9F9BDC;
+    color: white;
+}
+
+#contactButton {
+    background-color: transparent;
+    border-color: #9F9BDC;
+}
+
+#contactButton:hover {
+    background-color: #9F9BDC;
+    color: white;
+}
+
+.card {
+    background-color: #9F9BDC;
+}
+

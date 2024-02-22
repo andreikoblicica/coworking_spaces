@@ -1,0 +1,93 @@
+/* this for background image */
+body {
+    background-image: url('../home/images/bg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+/* this for navbar */
+nav {
+    background-color: #4C42BD;
+}
+
+.btn {
+    border-radius: 50px;
+    color: white;
+}
+
+.login {
+    border-color: #9F9BDC;
+}
+
+.login:hover {
+    background-color: #9F9BDC;
+    color: white;
+}
+
+/* this for navbar END*/
+
+/* footer stuff */
+#socialMediaSection {
+    background-color: #9F9BDC;
+    color: white;
+}
+
+#linksSection {
+    background-color: #9F9BDC;
+    color: white;
+}
+
+#copyrightDiv {
+    background-color: #8f8cc6;
+    color: white;
+}
+/* footer stuff END*/
+
+.card {
+    background-color: #57579A;
+    width: auto;
+    height: 660px;
+}
+
+.card-title {
+    color: white;
+}
+
+.card-body {
+    color: white;
+}
+
+#lightbulbIcon {
+    color: white;
+}
+
+.fa-solid.fa-inbox {
+    color: white;
+}
+
+.fa-solid.fa-rocket {
+    color: white;
+}
+
+.fa-solid.fa-computer {
+    color: white;
+}
+
+.fa-solid.fa-mobile-screen-button {
+    color: white;
+}
+
+.fa-solid.fa-people-group {
+    color: white;
+}
+
+#joinButton {
+    background-color: #0E1943;
+    border-color: #AEDADA;
+}
+
+#joinButton:hover {
+    background-color: #AEDADA;
+    color: white;
+}

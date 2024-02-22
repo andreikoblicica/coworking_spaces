@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coworking spaces</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="list-a-space.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://kit.fontawesome.com/3233ca0959.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+    <a class="navbar-brand" href="../home/home.html">COWORKING</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="../home/home.html">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="../memberships/memberships.html">memberships</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="../community/community.html">community</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="../gallery/gallery.html">gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="../contact/contact.html">contact</a>
+        </li>
+        <li class="nav-item">
+          <a href="../login/login.html">
+            <button id="login_button" type="button" class="btn btn-outline-light login">logout</button>
+          </a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <!-- OPTIONS FORM -->
+
+  <div class="container-fluid text-center" id="find_your_space">
+    <div class="row p-5">
+        <div class="col">
+            <h2 class="fw-bold text-white">List Your Space</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="text-white">Please fill all the fields so we can make you an offer about your coworking space</p>
+        </div>
+    </div>
+
+    <div class="row mb-3 px-5 pt-5">
+        <div class="col">
+          <div class="input-group">
+            <input type="text" class="form-control" id="firstName" placeholder="First Name" aria-label="Name" aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <input type="text" class="form-control" id="lastName" placeholder="Last Name" aria-label="Name" aria-describedby="basic-addon1">
+          </div>
+        </div>
+      </div>
+  
+      <div class="row mb-3 px-5">
+        <div class="col">
+          <div class="input-group">
+            <input type="text" class="form-control" id="email" placeholder="Email" aria-label="Name" aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <input type="text" class="form-control" id="phone" placeholder="Phone" aria-label="Name" aria-describedby="basic-addon1">
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3 px-5">
+
+        <div class="col">
+
+            <select class="form-select form-control text-white bg-dark" id="spaceType">
+                <option value="">Space Type</option>
+                <option value="Open Concept">Open Concept</option>
+                <option value="Private Office">Private Office</option>
+            </select>
+
+        </div>
+        <div class="col">
+            <select class="form-select form-control text-white bg-dark" id="spaceDimension">
+                <option value="">Space Dimension</option>
+                <option value="100 - 200 m&sup2">100 - 200 m&sup2</option>
+                <option value="200 - 300 m&sup2">200 - 300 m&sup2</option>
+                <option value="300 - 400 m&sup2">300 - 400 m&sup2 </option>
+                <option value="500+ m&sup2">500+ m&sup2 </option>
+            </select>
+        </div>
+     
+    </div>
+
+    <div class="row mb-3 px-5">
+
+        <div class="col">
+
+            <input type="number" class="form-control" placeholder="Number of coworking spaces available" aria-label="Name" aria-describedby="basic-addon1" id="numberOfSpaces">
+
+        </div>
+        <div class="col">
+            <select class="form-select form-control text-white bg-dark" id="numberOfBathrooms">
+                <option value="">Number of bathrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5+</option>
+            </select>
+        </div>
+     
+    </div>
+    </div>
+
+    <div class="container-fluid text-left p-4">
+
+        <div class="row px-5">
+            <div class="form-check text-white">
+                <input class="form-check-input" type="checkbox" value="" id="parkingCheckbox"  aria-expanded="false" onchange="toggleParking(this)">
+                <label class="form-check-label" for="parkingCheckbox">
+                I can offer parking
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid text-center">
+        <div class="row mb-3 px-5">
+            <div class="col">
+                <input type="number" id="numberOfParkingSpaces" class="form-control" placeholder="Number of parking spaces available" aria-label="Name" aria-describedby="basic-addon1" id="numberOfParkingSpaces">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid text-left px-4">
+        <div class="row mb-3 px-5">
+            <div class="form-check text-white">
+                <input class="form-check-input" type="checkbox" value="" id="kitchenCheckbox" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <label class="form-check-label" for="kitchenCheckbox">
+                    I can offer a kitchen
+                </label>
+            </div>
+        </div>
+
+        <div class="row px-5 mb-3">
+            <div class="col">
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body text-white" id="collapseCard">
+                        Amenities available:
+                        <div class="form-check text-white">
+                            <input class="form-check-input" type="checkbox" value="" id="additionalCoffeeMachine">
+                            <label class="form-check-label" for="additionalCoffeeMachine">
+                              coffee maker
+                            </label>
+                          </div>
+                            
+                          <div class="form-check text-white">
+                            <input class="form-check-input" type="checkbox" value="" id="additionalFridge">
+                            <label class="form-check-label" for="additionalFridge">
+                              fridge
+                            </label>
+                          </div>  
+          
+                          <div class="form-check text-white">
+                            <input class="form-check-input" type="checkbox" value="" id="additionalMicrowave">
+                            <label class="form-check-label" for="additionalMicrowave">
+                              microwave
+                            </label>
+                          </div> 
+          
+                          <div class="form-check text-white">
+                            <input class="form-check-input" type="checkbox" value="" id="additionalWaterDispenser">
+                            <label class="form-check-label" for="additionalWaterDispenser">
+                              water dispenser
+                            </label>
+                          </div> 
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3 px-5">
+            <div class="form-check text-white">
+                <input class="form-check-input" type="checkbox" value="" id="additionalEquipmentCheckbox" data-bs-toggle="collapse" data-bs-target="#collapseAdditionalAmenities" aria-expanded="false" aria-controls="collapseAdditionalAmenities">
+                <label class="form-check-label" for="additionalEquipmentCheckbox">
+                    I can offer additional equipment
+                </label>
+            </div>
+        </div>
+
+        <div class="row px-5 mb-3">
+            <div class="col">
+              <div class="collapse" id="collapseAdditionalAmenities">
+                <div class="card card-body" id="collapseCard">
+  
+                  <div class="form-check text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="additionalScreen">
+                    <label class="form-check-label" for="additionalScreen">
+                      screen
+                    </label>
+                  </div>
+                    
+                  <div class="form-check text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="additionalkeyboard">
+                    <label class="form-check-label" for="additionalkeyboard">
+                      keyboard
+                    </label>
+                  </div>  
+  
+                  <div class="form-check text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="additionalmouse">
+                    <label class="form-check-label" for="additionalmouse">
+                      mouse
+                    </label>
+                  </div> 
+  
+                  <div class="form-check text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="additionalprinter">
+                    <label class="form-check-label" for="additionalprinter">
+                      printer
+                    </label>
+                  </div> 
+
+                  <div class="form-check text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="additionalInternet">
+                    <label class="form-check-label" for="additionalInternet">
+                      multiple internet providers
+                    </label>
+                  </div> 
+
+                  <div class="form-check text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="lockers">
+                    <label class="form-check-label" for="lockers">
+                        lockers
+                    </label>
+                  </div> 
+
+                  <div class="form-check text-white">
+                    <input class="form-check-input" type="checkbox" value="" id="projector">
+                    <label class="form-check-label" for="projector">
+                      projector
+                    </label>
+                  </div> 
+  
+                  </div>
+              </div>
+            </div>
+          </div>  
+    </div>
+
+    <div class="container-fluid text-center ">
+        <div class="row p-3 mb-5">
+            <div class="col">
+                <!-- <a href="../home/home.html">        -->
+                    <button type="button" class="btn btn-outline-light" id="sendRequestButton">send request</button>
+                <!-- </a> -->
+         
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+  <!-- FOOTER -->
+  <footer class="text-center text-lg-start bg-light text-muted" id="footer">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" id="socialMediaSection">
+      <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+      </div>
+  
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </section>
+  
+    <!-- Section: Body  -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-0 border-bottom" id="linksSection">
+
+      <!-- Name and description of the company -->
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>COWORKING
+            </h6>
+            <p>
+              A companion, not just a company.
+            </p>
+          </div>
+
+          <!-- Links -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <p>
+              <a href="../community/community.html" class="text-reset">Community</a>
+            </p>
+            <p>
+              <a href="../contact/contact.html" class="text-reset">Contact</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Cookie Policy (EU)</a>
+            </p>
+          </div>
+  
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <p>
+              <a href="../memberships/memberships.html" class="text-reset">Memberships</a>
+            </p>
+            <p>
+              <a href="../community/community.html" class="text-reset">Blog</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Gallery</a>
+            </p>
+          </div>
+  
+          <!-- Contact -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> 20A Onisifor Ghibu <br> Cluj-Napoca, CJ 400185</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              hello@coworking.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Copyright -->
+    <div id="copyrightDiv" class="text-center p-2">
+      © 2022 Copyright:
+      Coworking. All rights reserved
+    </div>
+  </footer>
+
+
+  </body>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+  <script src="list-a-space.js" type="text/javascript"></script>
+</html>

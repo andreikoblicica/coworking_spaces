@@ -1,0 +1,25 @@
+body {
+    background-image: url('../home/images/bg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.font-weight-light{
+    font-weight: 100;
+}
+
+.font-weight-bold{
+    font-weight: bold;
+}
+
+.hover-btn:hover {
+    background-color: transparent;
+    border-color: #9F9BDC;
+    color: white;
+}
+
+.primary-btn {
+    background-color: #9F9BDC;
+    border-color: #9F9BDC;
+}

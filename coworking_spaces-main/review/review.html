@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coworking spaces</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../home/home.css" type="text/css">
+    <link rel="stylesheet" href="../community/community.css" type="text/css">
+    <link rel="stylesheet" href="../gallery/gallery.css" type="text/css">
+    <link rel="stylesheet" href="review.css" type="text/css">
+    <script type="module" src="review.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://kit.fontawesome.com/3233ca0959.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../home/home.html">COWORKING</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-item nav-link active" href="../home/home.html">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="../memberships/memberships.html">memberships</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="../community/community.html">community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="../gallery/gallery.html">gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="../contact/contact.html">contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../login/login.html">
+                            <button id="login_button" type="button" class="btn btn-outline-light login">logout</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row mt-5 ms-5">
+        <div class="col-6">
+            <h2 class="fw-bold display-7 text-white">Coworking Space Name</h2>
+        </div>
+    </div>
+
+    <form id="reviewForm">
+        <div class="row ms-5 mt-5">
+            <p class="text-white font-size-xlarge">So, what do you think?</p>
+            <p class="text-white">Your overall rating of this coworking space*</p>
+        </div>
+
+        <div class="ms-5 d-flex justify-content-around col-2">
+            <input class="form-check-input font-size-xlarge overall-rating" type="radio" name="flexRadioDefault" id="overall-rating-0">
+            <input class="form-check-input font-size-xlarge overall-rating" type="radio" name="flexRadioDefault" id="overall-rating-1">
+            <input class="form-check-input font-size-xlarge overall-rating" type="radio" name="flexRadioDefault" id="overall-rating-2">
+            <input class="form-check-input font-size-xlarge overall-rating" type="radio" name="flexRadioDefault" id="overall-rating-3">
+            <input class="form-check-input font-size-xlarge overall-rating" type="radio" name="flexRadioDefault" id="overall-rating-4">
+        </div>
+
+        <div class="row ms-5 mt-5">
+            <p class="text-white">Your name*</p>
+        </div>
+
+        <div class="mt-1 col-10 ms-5">
+            <input class="form-control" type="text" id="reviewer-name">
+        </div>
+
+        <div class="row ms-5 mt-5">
+            <p class="text-white">Title of your review*</p>
+        </div>
+
+        <div class="mt-1 col-10 ms-5">
+            <input class="form-control" type="text" id="rating-title" placeholder="Summarize your visit or highlight an interesting detail">
+        </div>
+
+        <div class="row ms-5 mt-5">
+            <p class="text-white">Your review*</p>
+        </div>
+
+        <div class="mt-1 col-10 ms-5">
+            <textarea class="form-control height-240" id="review-text-area" placeholder="Tell people about your experience: the atmosphere, the Wifi, the members, any good events, etc."></textarea>
+        </div>
+
+        <div class="row ms-5 mt-5">
+            <p class="text-white font-size-xlarge">Ratings*</p>
+        </div>
+
+        <div class="row mt-2 ms-5 mb-3">
+            <div class="col-3">
+                <i class="fa-solid fa-location-dot text-white me-2 mt-1 d-inline"></i>
+                <p class="text-white font-size-larger d-inline">Location</p>
+                <div class="d-flex justify-content-around col-6">
+                    <input class="form-check-input font-size-xlarge location-rating" type="radio" id="location-rating-0">
+                    <input class="form-check-input font-size-xlarge location-rating" type="radio" id="location-rating-1">
+                    <input class="form-check-input font-size-xlarge location-rating" type="radio" id="location-rating-2">
+                    <input class="form-check-input font-size-xlarge location-rating" type="radio" id="location-rating-3">
+                    <input class="form-check-input font-size-xlarge location-rating" type="radio" id="location-rating-4">
+                </div>
+            </div>
+            <div class="col-3">
+                <i class="fa-solid fa-wifi text-white me-2 mt-1 d-inline"></i>
+                <p class="text-white font-size-larger d-inline">Wifi</p>
+                <div class="d-flex justify-content-around col-6">
+                    <input class="form-check-input font-size-xlarge wifi-rating" type="radio" id="wifi-rating-0">
+                    <input class="form-check-input font-size-xlarge wifi-rating" type="radio" id="wifi-rating-1">
+                    <input class="form-check-input font-size-xlarge wifi-rating" type="radio" id="wifi-rating-2">
+                    <input class="form-check-input font-size-xlarge wifi-rating" type="radio" id="wifi-rating-3">
+                    <input class="form-check-input font-size-xlarge wifi-rating" type="radio" id="wifi-rating-4">
+                </div>
+            </div>
+            <div class="col-3">
+                <i class="fa-solid fa-briefcase text-white me-2 mt-1 d-inline"></i>
+                <p class="text-white font-size-larger d-inline">Productive environment</p>
+                <div class="d-flex justify-content-around col-6">
+                    <input class="form-check-input font-size-xlarge productivity-rating" type="radio" id="productivity-rating-0">
+                    <input class="form-check-input font-size-xlarge productivity-rating" type="radio" id="productivity-rating-1">
+                    <input class="form-check-input font-size-xlarge productivity-rating" type="radio" id="productivity-rating-2">
+                    <input class="form-check-input font-size-xlarge productivity-rating" type="radio" id="productivity-rating-3">
+                    <input class="form-check-input font-size-xlarge productivity-rating" type="radio" id="productivity-rating-4">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-2 ms-5 mb-3">
+            <div class="col-3">
+                <i class="fa-solid fa-house text-white me-2 mt-1 d-inline"></i>
+                <p class="text-white font-size-larger d-inline">Comfort</p>
+                <div class="d-flex justify-content-around col-6">
+                    <input class="form-check-input font-size-xlarge comfort-rating" type="radio" id="comfort-rating-0">
+                    <input class="form-check-input font-size-xlarge comfort-rating" type="radio" id="comfort-rating-1">
+                    <input class="form-check-input font-size-xlarge comfort-rating" type="radio" id="comfort-rating-2">
+                    <input class="form-check-input font-size-xlarge comfort-rating" type="radio" id="comfort-rating-3">
+                    <input class="form-check-input font-size-xlarge comfort-rating" type="radio" id="comfort-rating-4">
+                </div>
+            </div>
+            <div class="col-3">
+                <i class="fa-regular fa-comments text-white me-2 mt-1 d-inline"></i>
+                <p class="text-white font-size-larger d-inline">Social & Community</p>
+                <div class="d-flex justify-content-around col-6">
+                    <input class="form-check-input font-size-xlarge social-rating" type="radio" id="social-rating-0">
+                    <input class="form-check-input font-size-xlarge social-rating" type="radio" id="social-rating-1">
+                    <input class="form-check-input font-size-xlarge social-rating" type="radio" id="social-rating-2">
+                    <input class="form-check-input font-size-xlarge social-rating" type="radio" id="social-rating-3">
+                    <input class="form-check-input font-size-xlarge social-rating" type="radio" id="social-rating-4">
+                </div>
+            </div>
+            <div class="col-3">
+                <i class="fa-solid fa-desktop text-white me-2 mt-1 d-inline"></i>
+                <p class="text-white font-size-larger d-inline">Amenities</p>
+                <div class="d-flex justify-content-around col-6">
+                    <input class="form-check-input font-size-xlarge amenities-rating" type="radio" id="amenities-rating-0">
+                    <input class="form-check-input font-size-xlarge amenities-rating" type="radio" id="amenities-rating-1">
+                    <input class="form-check-input font-size-xlarge amenities-rating" type="radio" id="amenities-rating-2">
+                    <input class="form-check-input font-size-xlarge amenities-rating" type="radio" id="amenities-rating-3">
+                    <input class="form-check-input font-size-xlarge amenities-rating" type="radio" id="amenities-rating-4">
+                </div>
+            </div>
+        </div>
+
+        <div class="row ms-5 mt-5">
+            <p class="text-white">Add a tip to help coworkers settle in</p>
+        </div>
+
+        <div class="mt-1 col-10 ms-5">
+            <textarea class="form-control height-240" id="coworkers-text-area" placeholder="A cool cafe in the area, a great spot to eat, a hidden neighborhood gem, etc."></textarea>
+        </div>
+
+        <div class="row ms-5 mt-5">
+            <p class="text-white font-size-xlarge font-weight-bold">Coworker Promise*</p>
+        </div>
+
+        <div class="form-check ms-5 mb-5">
+            <input class="form-check-input" type="checkbox" id="opinion-checkbox">
+            <label class="form-check-label text-white" for="opinion-checkbox">
+                I certify that this review is based on my own experience and is my genuine opinion of this coworking space.
+            </label>
+        </div>
+
+        <p class="text-red ms-5" id="error_text" hidden>Please complete all required fields:</p>
+        <ul class="text-red" id="error_list"></ul>
+
+        <button type="submit" class="btn btn-light find_your_space_button margin-left-btn mb-5"
+                id="post_review_btn">post your review</button>
+    </form>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-lg-start bg-light text-muted" id="footer">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" id="socialMediaSection">
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section: Body  -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-0 border-bottom" id="linksSection">
+
+            <!-- Name and description of the company -->
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>COWORKING
+                        </h6>
+                        <p>
+                            A companion, not just a company.
+                        </p>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <p>
+                            <a href="../community/community.html" class="text-reset">Community</a>
+                        </p>
+                        <p>
+                            <a href="../contact/contact.html" class="text-reset">Contact</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Cookie Policy (EU)</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <p>
+                            <a href="../memberships/memberships.html" class="text-reset">Memberships</a>
+                        </p>
+                        <p>
+                            <a href="../community/community.html" class="text-reset">Blog</a>
+                        </p>
+                        <p>
+                            <a href="../gallery/gallery.html" class="text-reset">Gallery</a>
+                        </p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> 20A Onisifor Ghibu <br> Cluj-Napoca, CJ 400185</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            hello@coworking.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright -->
+        <div id="copyrightDiv" class="text-center p-2">
+            © 2022 Copyright:
+            Coworking. All rights reserved
+        </div>
+    </footer>
+</body>
+</html>

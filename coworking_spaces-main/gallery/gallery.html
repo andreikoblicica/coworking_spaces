@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coworking spaces</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="gallery.css" type="text/css">
+    <script type="module" src="gallery.js"></script>
+    <link rel="stylesheet" href="../home/home.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://kit.fontawesome.com/3233ca0959.js" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../home/home.html">COWORKING</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="../home/home.html">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="../memberships/memberships.html">memberships</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="../community/community.html">community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link active" href="gallery.html">gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="../contact/contact.html">contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../login/login.html">
+                            <button id="login_button" type="button" class="btn btn-outline-light login">logout</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-6 ms-5 mt-4">
+            <input
+                    id="pac-input"
+                    class="controls mb-5 ms-5"
+                    type="text"
+                    placeholder="Search Box"
+            />
+        </div>
+        <div class="col-4 mt-4">
+            <select class="form-select form-control mb-4 text-white bg-dark">
+                <option value="">Space Type</option>
+                <option value="Open Concept">Open Concept</option>
+                <option value="Private Office">Private Office</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row ms-3 me-1">
+        <div class="col-3">
+            <img src="images/office.png" class="d-block mx-sm-auto img-fluid gallery-cursor-on-pic" loading="lazy">
+        </div>
+        <div class="col-3">
+            <img src="images/office2.png" class="d-block mx-sm-auto img-fluid gallery-cursor-on-pic" loading="lazy">
+        </div>
+        <div class="col-3">
+            <img src="images/office3.png" class="d-block mx-sm-auto img-fluid gallery-pic gallery-cursor-on-pic" loading="lazy">
+        </div>
+        <div class="col-3">
+            <img src="images/office4.png" class="d-block mx-sm-auto img-fluid gallery-cursor-on-pic" loading="lazy">
+        </div>
+    </div>
+
+    <div class="row ms-3 me-1 mt-3 mb-4">
+        <div class="col-3">
+            <img src="images/office5.png" class="d-block mx-sm-auto img-fluid gallery-cursor-on-pic" loading="lazy">
+        </div>
+        <div class="col-3">
+            <img src="images/office6.png" class="d-block mx-sm-auto img-fluid gallery-cursor-on-pic" loading="lazy">
+        </div>
+        <div class="col-3">
+            <img src="images/office7.png" class="d-block mx-sm-auto img-fluid gallery-pic gallery-cursor-on-pic" loading="lazy">
+        </div>
+        <div class="col-3">
+            <img src="images/office8.png" class="d-block mx-sm-auto img-fluid gallery-cursor-on-pic" loading="lazy">
+        </div>
+    </div>
+
+    <div class="row ms-3 me-1 mt-3 mb-4" id="new-coworking-space-container">
+
+    </div>
+
+    <div class="row">
+        <div id="map"></div>
+    </div>
+
+
+    <!--
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7vGknvzA5Sdimxq8bkUj7MjpoguXkwUM&callback=initAutocomplete&libraries=places&v=weekly"
+            defer
+    ></script>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-lg-start bg-light text-muted" id="footer">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" id="socialMediaSection">
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section: Body  -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-0 border-bottom" id="linksSection">
+
+            <!-- Name and description of the company -->
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>COWORKING
+                        </h6>
+                        <p>
+                            A companion, not just a company.
+                        </p>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <p>
+                            <a href="../community/community.html" class="text-reset">Community</a>
+                        </p>
+                        <p>
+                            <a href="../contact/contact.html" class="text-reset">Contact</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Cookie Policy (EU)</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <p>
+                            <a href="../memberships/memberships.html" class="text-reset">Memberships</a>
+                        </p>
+                        <p>
+                            <a href="../community/community.html" class="text-reset">Blog</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Gallery</a>
+                        </p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> 20A Onisifor Ghibu <br> Cluj-Napoca, CJ 400185</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            hello@coworking.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright -->
+        <div id="copyrightDiv" class="text-center p-2">
+            © 2022 Copyright:
+            Coworking. All rights reserved
+        </div>
+    </footer>
+
+</body>
+</html>
